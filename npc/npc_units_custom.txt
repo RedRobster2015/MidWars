@@ -1,7 +1,8 @@
 "DOTAUnits"
 {
 	"Version"	"1"
-  
+	//Adding a comment for test purposes
+	
 	"dota_fountain_radiant"
 	{
 		//General
