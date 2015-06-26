@@ -1,0 +1,70 @@
+"DOTAUnits"
+{
+	"Version"	"1"
+  
+	"dota_fountain_radiant"
+	{
+		//General
+		"BaseClass"					"npc_dota_building"
+		"UnitLabel"					"radiant_fountain"
+		"HasInventory"				"0"
+		"ConsideredHero"			"0"
+		"IsAncient"					"0"
+		"IsNeutralUnitType"			"0"
+		"CanBeDominated"			"0"
+		"AutoAttacksByDefault"		"1"
+
+		//Abilities
+		"AbilityLayout"				"2"	
+		"Ability1"					"fountain_hero_regen"
+		"Ability2"					"fountain_defense"
+
+		//Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+		"AttackRate"				"0.000005"
+		"AttackAcquisitionRage"		"900"
+		"AttackRange"				"800"
+		"AttackRangeBuffer"			"0"
+		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf"
+		"ProjectileSpeed"			"2000"
+
+		//Vision
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+	}
+
+	"dota_fountain_dire"
+	{
+		"BaseClass"					"npc_dota_building"
+		"UnitLabel"					"dire_fountain"
+		"HasInventory"				"0"
+		"ConsideredHero"			"0"
+		"IsAncient"					"0"
+		"IsNeutralUnitType" 		"0"
+		"CanBeDominated"			"0"
+		"AutoAttacksByDefault"		"1"
+
+		//Abilities
+		"AbilityLayout"				"2"	
+		"Ability1"					"fountain_hero_regen"
+		"Ability2"					"fountain_defense"
+
+		//Attack
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"			"100"
+		"AttackDamageMax"			"100"
+		"AttackRate"				"0.000005"
+		"AttackAcquisitionRage"		"900"
+		"AttackRange"				"800"
+		"AttackRangeBuffer"			"0"
+		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf"
+		"ProjectileSpeed"			"1000"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_HERO"
+
+		//Vision
+		"VisionDaytimeRange"		"1000"
+		"VisionNighttimeRange"		"1000"
+	}
+}
