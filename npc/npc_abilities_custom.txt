@@ -1,0 +1,135 @@
+// DataDriven Ability Guide: https://moddota.com/forums/discussion/14/datadriven-ability-breakdown-documentation
+
+"DOTAAbilities"
+{
+	"Version"		"1"
+	  
+	"fountain_hero_regen"
+	{
+		//General
+		//----------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+
+		"precache"
+		{
+			"particle_folder"		"particles/econ/events/ti5/radiant_fountain_regen_ti5.vpcf"
+		}
+		
+		//Modifier
+		//----------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_fountain_hero_regen"
+			{	
+					"Passive"					"1"
+					"IsHidden"					"1"
+
+					"Aura" 						"create_fountain_hero_regen_aura"
+					"Aura_Radius" 				"%radius"
+					"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Aura_ApplyToCaster"		"0"
+			}
+
+			"create_fountain_hero_regen_aura"
+			{
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"			"%health_regen"
+					"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"		"%mana_regen"
+				}
+
+				"EffectName"		"particles/econ/events/ti5/radiant_fountain_regen_ti5.vpcf"
+			}
+		}
+
+		//Special
+		//----------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"health_regen"		"10.0"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"mana_regen"		"7.5"
+			}
+
+		}
+	}
+	
+	"fountain_defense"
+	{
+		//General
+		//----------------------------------------------------------------------------------------
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_AURA | DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+
+		"precache"
+		{
+			"particle"		"particles/dark_smoke_test.vpcf"
+		}
+		
+		//Modifier
+		//----------------------------------------------------------------------------------------
+		"Modifiers"
+		{
+			"modifier_fountain_defense"
+			{	
+					"Passive"					"1"
+					"IsHidden"					"1"
+
+					"Aura" 						"create_fountain_defense_aura"
+					"Aura_Radius" 				"%radius"
+					"Aura_Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Aura_Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP"
+					"Aura_ApplyToCaster"		"0"
+			}
+
+			"create_fountain_defense_aura"
+			{
+				"IsHidden"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"			"%health_regen"
+				}
+
+				"EffectName"		"particles/dark_smoke_test.vpcf"
+			}
+		}
+
+		//Special
+		//----------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"health_regen"		"-20.0"
+			}
+		}
+	}
+}
+
