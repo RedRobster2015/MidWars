@@ -1,11 +1,12 @@
 "DOTAUnits"
 {
 	"Version"	"1"
-  
+	
+	//DOTA Radiant Fountain
 	"dota_fountain_radiant"
 	{
 		//General
-		"BaseClass"					"npc_dota_building"
+		"BaseClass"					"npc_dota_tower"
 		"UnitLabel"					"radiant_fountain"
 		"HasInventory"				"0"
 		"ConsideredHero"			"0"
@@ -17,7 +18,7 @@
 		//Abilities
 		"AbilityLayout"				"2"	
 		"Ability1"					"fountain_hero_regen"
-		"Ability2"					"fountain_defense"
+		//"Ability2"					"fountain_defense"
 
 		//Attack
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -29,15 +30,17 @@
 		"AttackRangeBuffer"			"0"
 		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf"
 		"ProjectileSpeed"			"2000"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 
 		//Vision
 		"VisionDaytimeRange"		"1000"
 		"VisionNighttimeRange"		"1000"
 	}
-
+	
+	//DOTA Dire Fountain
 	"dota_fountain_dire"
 	{
-		"BaseClass"					"npc_dota_building"
+		"BaseClass"					"npc_dota_tower"
 		"UnitLabel"					"dire_fountain"
 		"HasInventory"				"0"
 		"ConsideredHero"			"0"
@@ -49,22 +52,164 @@
 		//Abilities
 		"AbilityLayout"				"2"	
 		"Ability1"					"fountain_hero_regen"
-		"Ability2"					"fountain_defense"
+		//"Ability2"					"fountain_defense"
 
 		//Attack
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 		"AttackDamageMin"			"100"
 		"AttackDamageMax"			"100"
-		"AttackRate"				"0.000005"
+		"AttackRate"				"0.05"
 		"AttackAcquisitionRage"		"900"
 		"AttackRange"				"800"
 		"AttackRangeBuffer"			"0"
 		"ProjectileModel"			"particles/base_attacks/fountain_attack.vpcf"
-		"ProjectileSpeed"			"1000"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_HERO"
+		"ProjectileSpeed"			"2000"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
 
 		//Vision
 		"VisionDaytimeRange"		"1000"
 		"VisionNighttimeRange"		"1000"
+	}
+	
+	//Big Roshan Clone Unit
+	"midwars_big_roshan"
+	{
+		"BaseClass"					"npc_dota_roshan"
+		"Model"						"models/creeps/roshan/roshan.vmdl"	
+		"SoundSet"					"Roshan"
+		"ModelScale"				"1"
+		"ConsiderHero"				"1"
+		"CanBeDominated"			"0"
+		
+		"Level"						"20"
+		"Ability1"					"roshan_spell_block"
+		"Ability2"					"roshan_bash"
+		"Ability3"					"roshan_slam"				
+		
+		"ArmorPhysical"				"4"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"40"
+		"AttackDamageMax"			"60"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.3"
+		
+		"BountyXP"					"500"
+		"BountyGoldMin"				"150"
+		"BountyGoldMax"				"300"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"1400"
+		
+		"StatusHealth"				"5000"
+		"StatusHealthRegen"			"20"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			"CanRespawn"			"1"
+			"DisableResistance"		"0.0"
+			
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"100.0"
+					"Avoidance"		"0.0"
+					"Support"		"0.0"
+				}
+			}
+			
+			"OffensiveAbilities"
+			{
+				"Ability2"
+				{
+					"Name"			"roshan_bash"
+				}
+				
+				"Ability3"
+				{
+					"Name"			"roshan_slam"
+				}
+			}
+		}
+	}
+	
+	//Small Roshan Clone Unit
+	"midwars_small_roshan"
+	{
+		"BaseClass"					"npc_dota_roshan"
+		"Model"						"models/creeps/roshan/roshan.vmdl"	
+		"SoundSet"					"Roshan"
+		"ModelScale"				"0.5"
+		"ConsiderHero"				"1"
+		"CanBeDominated"			"0"
+		
+		"Level"						"20"
+		"Ability1"					"roshan_spell_block"
+		"Ability2"					"wisp_tether"
+		
+		"ArmorPhysical"				"4"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"			"40"
+		"AttackDamageMax"			"60"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"AttackRate"				"1"
+		"AttackAnimationPoint"		"0.3"
+		
+		"BountyXP"					"300"
+		"BountyGoldMin"				"100"
+		"BountyGoldMax"				"250"
+		
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		
+		"VisionDaytimeRange"		"1400"
+		"VisionNighttimeRange"		"1400"
+		
+		"StatusHealth"				"4000"
+		"StatusHealthRegen"			"20"
+		"StatusMana"				"2000"
+		"StatusManaRegen"			"20"
+		
+		"TeamName"					"DOTA_TEAM_NEUTRALS"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+		"Creature"
+		{
+			"CanRespawn"			"1"
+			"DisableResistance"		"0.0"
+			
+			"DefaultState"			"Invade"
+			"States"
+			{
+				"Invade"
+				{
+					"Name"			"Invade"
+					"Aggression"	"100.0"
+					"Avoidance"		"0.0"
+					"Support"		"60.0"
+				}
+			}
+			
+			"DefensiveAbilities"
+			{
+				"Ability2"
+				{
+					"Name"			"wisp_tether"
+				}
+			}
+		}					
 	}
 }
